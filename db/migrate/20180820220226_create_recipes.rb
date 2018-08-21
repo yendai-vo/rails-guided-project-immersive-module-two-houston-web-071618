@@ -4,10 +4,10 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.string :img_url
       t.string :title
       t.string :cook_time
+      t.string :ingredient
       t.string :instruction
       t.belongs_to :user
-      t.belongs_to :cuisine
-      t.belongs_to :dish_type
+
       t.timestamps
     end
   end

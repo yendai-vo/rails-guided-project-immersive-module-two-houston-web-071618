@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<h2><%= @user.username %></h2>
+
+<div>
+  <div><%= image_tag @user.img_url %></div>
+  <div>Location: <%= @user.location %></div>
+  <div>Recipe(s): <% @user.recipes.each do |recipe| %>
+          <div><%= link_to recipe.title, recipe %></div>
+       <% end %></div>
+
+</div></br>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

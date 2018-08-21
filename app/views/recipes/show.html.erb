@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<h2><%= @recipe.title.titleize %></h2>
+
+<div>
+  <div><%= image_tag @recipe.img_url %></div>
+  <div>Cook Time: <%= @recipe.cook_time %></div>
+  <div>Instructions: <%= @recipe.instruction %></div>
+  <div>Created By: <%= @recipe.user.username %></div>
+  <div><%= link_to @recipe.cuisine.name, cuisine_path(@recipe.cuisine) %> <%= link_to @recipe.dish_type.name, dish_type_path(@recipe.dish_type) %></div>
+
+</div></br>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
