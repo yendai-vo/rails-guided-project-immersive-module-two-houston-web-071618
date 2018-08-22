@@ -1,5 +1,22 @@
 <h1>New Recipe</h1>
-
-<%= render 'form', recipe: @recipe %>
+<div>
+    <%= form_with model: @recipe do |f| %>
+        <div>Image URL: </div><div><%= f.text_field :img_url %></div></br>
+        <div>Recipe Name: </div><div><%= f.text_area :title,size: "24x2" %></div></br>
+        <div>Cook Time: </div><div><%= f.text_field :cook_time, placeholder: 'Example: 1 hr 30 mins' %></div></br>
+        <div>List of Ingredients: </div><div><%= f.text_area :ingredient, placeholder: 'Example: 1 tbsp. of salt, 3 chopped carrots, etc.', size: "50x10" %></div></br>
+        <div>Instructions: </div><div><%= f.text_area :instruction, placeholder: 'Example: Stir-fry vegetables at medium-low heat, etc.', size: "50x10" %></div></br>
+        <%= f.label "Tags:" %></br>
+        <div><%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |b| %>
+            <div>
+                <%= b.check_box %>
+                <%= b.label %>
+            </div>
+        <% end %>
+        </div></br>
+        <div>Created By: <%= f.collection_select :user_id, User.order(:name),:id,:name, include_blank: true %></div></br>
+        <div><%= f.submit %></div>
+    <% end %>
+</div></br>
 
 <%= link_to 'Back', recipes_path %>
