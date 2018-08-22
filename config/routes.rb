@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users, :recipes, :tags, :recipe_tags, :comments
+  resources :users, :recipes, :tags, :recipe_tags, :comments, :sessions
 end

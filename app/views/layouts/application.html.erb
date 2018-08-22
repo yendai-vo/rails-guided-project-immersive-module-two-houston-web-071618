@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <%= link_to 'Sign In', new_session_path %> <%= link_to 'Sign Up', new_user_path %>
+    <p>Welcome, <%= @logged_in_user.name %></p>
     <%= yield %>
   </body>
 </html>
