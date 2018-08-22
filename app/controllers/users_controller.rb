@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: %i[show edit update destroy]
 
   def index
     @users = User.all
@@ -16,7 +18,14 @@ class UsersController < ApplicationController
   def edit; end
 
   def create
-    @user = User.new(user_params)
+    User.create(user_params)
+
+    if !user.valid?
+      flash[:error] = user.errors.full_messages[0]
+      redirect_to signup_path
+    else
+      redirect_to users_path
+    end
   end
 
   def update; end
@@ -32,6 +41,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:id, :username, :location, :img_url)
+    params.require(:user).permit(:id, :name, :username, :email, :password_digest, :password_digest_confirmation, :location, :img_url)
   end
 end

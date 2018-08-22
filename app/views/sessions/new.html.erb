@@ -1,6 +1,10 @@
 <h1>Sign In</h1>
 <%= form_with url: sessions_path do |form| %>
-  <label>Name: </label>
-  <%= form.text_field :name %>
-  <%= form.submit %>
+  <label>Username: </label>
+  <%= form.text_field :username, placeholder: 'Username' %>
+
+  <label>Password: </label>
+  <%= form.text_field :password_digest, placeholder: 'Password' %>
+
+  <%= form.submit 'Log In' %>
 <% end %>
