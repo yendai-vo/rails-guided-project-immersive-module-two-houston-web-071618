@@ -1,11 +1,14 @@
 <h1>New User</h1>
 
 <%= form_with model: User.new do |f| %>
-    <%= f.text_field :username, placeholder: 'username' %>
-    <%= f.password_field :password_digest, placeholder: 'password' %>
-    <%= f.password_field :password_digest_confirmation, placeholder: 'confirm password' %>
+    <p><%= f.text_field :name, placeholder: 'name' %></p>
+    <p><%= f.text_field :username, placeholder: 'username' %></p>
+    <p><%= f.password_field :password, placeholder: 'password' %></p>
+    <p><%= f.password_field :password_confirmation, placeholder: 'confirm password' %></p>
+    <p><%= f.text_field :email, placeholder: 'email' %></p>
+    <p><%= f.text_field :location, placeholder: 'location' %></p>
+    <p><%= f.text_field :img_url, placeholder: 'image url' %></p>
+    <%= f.submit %>
 <% end %>
 
-<%= render 'form', user: @user %>
-
-<%= link_to 'Back', users_path %>
+<p><%= link_to 'Back', new_session_path %></p>

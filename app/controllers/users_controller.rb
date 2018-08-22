@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def create
-    User.create(user_params)
+    user = User.create(user_params)
 
     if !user.valid?
       flash[:error] = user.errors.full_messages[0]
@@ -41,6 +41,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:id, :name, :username, :email, :password_digest, :password_digest_confirmation, :location, :img_url)
+    params.require(:user).permit(:id, :name, :username, :email, :password, :password_confirmation, :location, :img_url)
   end
 end
