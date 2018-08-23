@@ -30,8 +30,19 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    
   end
+
+  # def new_comment
+  #   @comment = Comment.new(title: 'some title', description: 'some description')
+  #   @comment.recipe = @recipe
+
+  #   @comment.save
+  # end
+
+  # def add_comment
+  #   things we need
+  #   current user, recipe, title, description
+  # end
 
   private
 
