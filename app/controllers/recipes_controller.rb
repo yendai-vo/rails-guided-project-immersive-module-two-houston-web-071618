@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
 
   def edit
     set_recipe
+    @tags = Tag.all.order('name ASC')
   end
 
   def create
