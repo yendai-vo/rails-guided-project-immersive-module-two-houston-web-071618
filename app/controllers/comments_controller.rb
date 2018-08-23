@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
   end
 
   def new
+    # we need to take in the recipe (will come in from render), current_user_id(from session)
     @comment = Comment.new
   end
 
@@ -17,8 +18,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(comment_params)
-
+   
+    # @comment = Comment.new(comment_params)
+    @comment = Comment.create(comment_params)
+    redirect_to recipe_path(@comment.recipe)
   end
 
   def update
@@ -36,6 +39,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:id, :title, :description, :user_id, :recipe_id)
+      params.require(:comment).permit(:title, :description, :user_id, :recipe_id)
     end
 end

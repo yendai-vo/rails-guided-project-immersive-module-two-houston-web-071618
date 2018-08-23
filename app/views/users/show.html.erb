@@ -1,5 +1,3 @@
-
-
 <div>
   <div><%= image_tag @user.img_url, :class=> "img-circular" %></div>
   <div><h2><%= @user.username %></h2></div>
@@ -7,8 +5,10 @@
   <div>Owned Recipe(s): <% @user.recipes.each do |recipe| %>
           <div><%= link_to (image_tag recipe.img_url, size: "210x200"), recipe %></div>
           <div><%= link_to recipe.title, recipe %></div>
+          <div><%= link_to 'Edit This Recipe', edit_recipe_path(recipe) %></div></br>
        <% end %></div>
 
 </div></br>
+
 
 <%= link_to 'Back', users_path %>
