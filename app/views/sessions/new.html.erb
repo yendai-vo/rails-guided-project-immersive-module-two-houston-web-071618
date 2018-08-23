@@ -1,10 +1,19 @@
-<h1>Sign In</h1>
-<%= form_with url: sessions_path do |form| %>
-  <label>Username: </label>
-  <%= form.text_field :username, placeholder: 'Username' %>
-
-  <label>Password: </label>
-  <%= form.password_field :password_digest, placeholder: 'Password' %>
-
-  <%= form.submit 'Log In' %>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <div class="container text-center">
+    <h1 class="display-1">Foodie</h1>
+    <p class="lead">Cook and connect. Bring the world into your kitchen.</p>
+    <h3>Sign In</h3>
+      <%= form_with url: sessions_path do |form| %>
+      <label>Username: </label>
+      <%= form.text_field :username, placeholder: 'Username' %>
+      <label>Password: </label>
+      <%= form.password_field :password_digest, placeholder: 'Password' %>
+      <%= form.submit 'Log In' %>
+      <% end %>
+    </div>
+  </body>
+</html>

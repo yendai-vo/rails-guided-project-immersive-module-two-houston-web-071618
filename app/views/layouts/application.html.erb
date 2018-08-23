@@ -15,6 +15,7 @@
       <%= link_to 'Sign Up', new_user_path %>
     <% else %>
       <%= link_to "Log Out", '/sessions' , method: "delete" %>
+      <%= link_to 'Profile', user_path(@logged_in_user) %>
     <% end %>
     <p>Welcome, <%= @logged_in_user.name %></p>
     <%= yield %>
