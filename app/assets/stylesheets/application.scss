@@ -21,7 +21,10 @@ body.home {
 }
 
 body {
-    background-color: rgb(252, 233, 238);
+    background-image: url("https://images.pexels.com/photos/955454/pexels-photo-955454.jpeg");
+    ackground-size: cover;
+    // background-repeat: no-repeat;
+    background-position: center;
   }
 
 .recipe-list-image {
@@ -29,7 +32,26 @@ body {
   height: auto;
 }
 
-.recipe-body{
+.recipe-body {
+  color: #000;
+}
+
+.recipe-title {
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.user-list-image {
+  width: 100%;
+  height: auto;
+}
+
+.user-title {
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.user-body {
   color: #000;
 }
 
@@ -39,7 +61,20 @@ body {
   font-size: 500%;
 }
 
-.recipe-title{
+.display-1 {
   font-weight: bold;
-  font-size: 120%;
+  color: #fff;
+}
+
+.display-1 a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.display-6 {
+  color: #fff;
+}
+
+.inline {
+  display: inline;
 }

@@ -1,6 +1,5 @@
-<p class="text-right"><%= link_to 'Back', recipes_path %></p>
-
 <div class="container text-center">
+
 <h1>Editing Recipe</h1>
 
     <%= form_with model: @recipe do |f| %>
@@ -11,13 +10,14 @@
         <div>Instructions: </div><div><%= f.text_area :instruction, placeholder: 'Example: Stir-fry vegetables at medium-low heat, etc.', size: "50x10" %></div></br>
         <%= f.label "Tags:" %></br>
         <div><%= f.collection_check_boxes :tag_ids, @tags, :id, :name do |b| %>
-            <div>
+            
                 <%= b.check_box %>
                 <%= b.label %>
-            </div>
+            
         <% end %>
         </div></br>
         <div>Created By: <%= f.collection_select :user_id, User.order(:name),:id,:name, include_blank: true %></div></br>
         <div><%= f.submit %></div>
     <% end %>
+    <p class="text-center"><%= link_to 'Back', recipes_path %></p>
 </div></br>

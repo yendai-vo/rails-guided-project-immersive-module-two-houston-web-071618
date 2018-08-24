@@ -1,12 +1,19 @@
-<p class="text-right"><%= link_to 'Back', tags_path %></p>
+<p class="container-fluid text-right"><%= link_to 'Back', tags_path %></p>
+<div class="display-1 text-center"><a><%= link_to 'Foodie', recipes_path%></a></div></br>
 <div class="container text-center">
-<h2><%=  @tag.name %></h2>
-
-<div>
-  <div><% @tag.recipes.each do |recipe| %></div>
-            <div><%= link_to (image_tag recipe.img_url, size: "210x200"), recipe %></div>
-            <div><%= link_to recipe.title, recipe %></div><br>
-       <% end %>
+  <h1><%=  @tag.name %></h1></br>
+  <div class="container-fluid text-center">
+      <div class="card-columns col-xs-12">
+        <% @tag.recipes.each do |recipe| %>
+        <%= link_to(recipe) do %>
+          <div class="card">
+          <%= image_tag recipe.img_url, class: "recipe-list-image rounded" %>
+            <div class="card-body recipe-body">
+              <div class="recipe-title"><%= recipe.title %></div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      <div>
     </div>
-</div></br>
 </div>

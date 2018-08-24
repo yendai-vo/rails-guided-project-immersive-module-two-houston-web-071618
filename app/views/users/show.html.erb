@@ -1,6 +1,8 @@
-<p class="text-right"><%= link_to 'Back to Users', users_path %></p>
+<p class="container-fluid text-right"><%= link_to 'Back to Users', users_path %></p>
 
 <div class="container text-center">
+
+  <div class="display-1"><a><%= link_to 'Foodie', recipes_path%></a></div></br>
   <div><img src='<%= @user.img_url %>' alt="User Profile Picture" class="rounded-circle"></div>
   <div><h2><%= @user.username %></h2></div>
   <div>
