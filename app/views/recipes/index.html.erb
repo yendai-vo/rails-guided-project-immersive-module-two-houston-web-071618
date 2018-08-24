@@ -1,10 +1,18 @@
 
 <p class="text-right"><%= link_to 'Add a New Recipe', new_recipe_path %></p>
-<div class="container text-center">
-<h1>Recipes</h1>
-
-  <% @recipes.each do |recipe| %>
-    <div><%= link_to (image_tag recipe.img_url, size: "210x200"), recipe %></div>
-    <div><%= link_to recipe.title, recipe %></div></br>
-  <% end %>
+<div class="container-fluid text-center">
+<h1 class="foodie-cursive">Foodie Recipes</h1>
+  <div class="card-columns col-xs-12">
+    <% @recipes.each do |recipe| %>
+    <%= link_to(recipe) do %>
+      <div class="card">
+      <%= image_tag recipe.img_url, class: "recipe-list-image rounded" %>
+        <div class="card-body recipe-body">
+          <%= recipe.title %>
+          <div>Cook Time: <%= recipe.cook_time %></div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  <div>
 </div>

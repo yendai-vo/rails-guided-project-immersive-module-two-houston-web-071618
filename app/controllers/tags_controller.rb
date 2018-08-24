@@ -13,7 +13,7 @@ class TagsController < ApplicationController
   end
 
   def edit
-    @tags = Tag.all.order('name ASC')
+    
   end
 
   def create
