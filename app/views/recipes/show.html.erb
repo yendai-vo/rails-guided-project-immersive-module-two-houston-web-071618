@@ -1,30 +1,44 @@
-<p class="text-right"><%= link_to 'Back to Recipes', recipes_path %><p>
+<p class=" container-fluid text-right"><%= link_to 'Back to Recipes', recipes_path %><p>
 
 <div class="container text-center">
-<div class="display-1"><a><%= link_to 'Foodie', recipes_path%></a></div></br>
-<h1 class="display-6"><%= @recipe.title.titleize %></h1>
+  <div class="display-1"><a><%= link_to 'Foodie', recipes_path%></a></div></br>
+  <h1 class="display-6"><%= @recipe.title.titleize %></h1>
 
-  <div><%= image_tag @recipe.img_url %></div>
+  
   </br>
-  <div><% @recipe.tags.each do |tag| %>
+
+  <div class="row">
+
+    <div class="column text-left">
+       <div><% @recipe.tags.each do |tag| %>
          <%= link_to tag.name, tag %> |
        <% end %>
-  </div>
-  </br>
-  <div><strong>Cook Time: </strong><%= @recipe.cook_time %></div></br>
-  <div><strong>Ingredients: </strong><%= @recipe.ingredient %></div></br>
-  <div><strong>Instructions: </strong><%= @recipe.instruction %></div></br>
-  <div><strong>Created By: </strong><%= link_to @recipe.user.username, user_path(@recipe.user) %></div>
-  </br>
-  <div><strong>Comments: </strong><% @recipe.comments.each do |comment| %>
-                <div><%= link_to comment.user.username, users_path %> says:
+    </div>
+    <div><strong>Cook Time: </strong><%= @recipe.cook_time %></div></br>
+      <div><strong>Ingredients: </strong><%= @recipe.ingredient %></div></br>
+      <div><strong>Instructions: </strong><%= @recipe.instruction %></div></br>
+      <div><strong>Created By: </strong><%= link_to @recipe.user.username, user_path(@recipe.user) %></div>
+      </br>
+      <div><strong>Comments: </strong><% @recipe.comments.each do |comment| %>
+                <div><%= link_to comment.user.username, users_path%> says:
                     <i>"<%= comment.title %>"</i>
                     <div>"<%= comment.description %>"</div></br>
                 </div>
             <% end %>
+      </div></br>
+
+      <div class="container text-center">
+        <%= render template: "comments/new.html.erb", :recipe => @recipe %>
+      </div>
+
   </div>
-  <div>
-    <%= render template: "comments/new.html.erb", :recipe => @recipe %>
+
+
+    <div class="column text-right">
+      <div><%= image_tag @recipe.img_url %></div></br>
+    </div>
   </div>
+
+  
 
 </div></br>

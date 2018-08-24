@@ -22,7 +22,7 @@ body.home {
 
 body {
     background-image: url("https://images.pexels.com/photos/955454/pexels-photo-955454.jpeg");
-    ackground-size: cover;
+    // background-size: cover;
     // background-repeat: no-repeat;
     background-position: center;
   }
@@ -77,4 +77,17 @@ body {
 
 .inline {
   display: inline;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
