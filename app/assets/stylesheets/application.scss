@@ -13,6 +13,13 @@
  */
 @import "bootstrap";
 
+
+body.home {
+    background-image: url("https://img.sndimg.com/food/image/upload/v1/img/recipes/54/25/7/1O1KC1wTKTskFlseYbws_0S9A6432.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 body {
     background-color:rgb(204, 255, 255);
   }

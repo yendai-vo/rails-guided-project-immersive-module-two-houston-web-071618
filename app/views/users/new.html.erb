@@ -1,15 +1,18 @@
+<body class="home text-white">
 <p class="text-right"><%= link_to 'Back', new_session_path %></p>
 <div class="container text-center">
-<h1>New User</h1>
+<h1 class="display-3"><strong>Sign Up</strong></h1>
+<h3>It’s free. Who doesn't like free?</h3>
 
 <%= form_with model: User.new do |f| %>
-    <p><%= f.text_field :name, placeholder: 'name' %></p>
-    <p><%= f.text_field :username, placeholder: 'username' %></p>
-    <p><%= f.password_field :password, placeholder: 'password' %></p>
-    <p><%= f.password_field :password_confirmation, placeholder: 'confirm password' %></p>
-    <p><%= f.text_field :email, placeholder: 'email' %></p>
-    <p><%= f.text_field :location, placeholder: 'location' %></p>
-    <p><%= f.text_field :img_url, placeholder: 'image url' %></p>
+    <p><%= f.text_field :name, placeholder: 'Name' %></p>
+    <p><%= f.text_field :username, placeholder: 'Username' %></p>
+    <p><%= f.password_field :password, placeholder: 'Password' %></p>
+    <p><%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %></p>
+    <p><%= f.text_field :email, placeholder: 'Email' %></p>
+    <p><%= f.text_field :location, placeholder: 'Location' %></p>
+    <p><%= f.text_field :img_url, placeholder: 'Image URL' %></p>
     <%= f.submit %>
 <% end %>
 </div>
+</body>
