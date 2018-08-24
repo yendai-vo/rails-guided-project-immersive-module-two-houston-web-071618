@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  helper_method :current_user?
 
   def index
     @users = User.all
@@ -15,7 +16,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def edit; end
+  def edit
+  set_user
+  end
 
   def create
     user = User.create(user_params)
@@ -28,10 +31,18 @@ class UsersController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    set_user.update(user_params)
+
+    redirect_to user_path(@user)
+  end
 
   def destroy
     @user.destroy
+  end
+
+  def current_user?
+    @user.id == session[:signed_in_user_id]
   end
 
   private

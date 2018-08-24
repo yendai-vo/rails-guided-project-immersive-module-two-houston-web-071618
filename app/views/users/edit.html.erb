@@ -1,6 +1,16 @@
-<h1>Editing User</h1>
 
-<%= render 'form', user: @user %>
+<div class="container text-center">
+    <h1>Editing User</h1>
+    <%= form_with model: @user do |f| %>
+        <div>Image URL: </div><div><%= f.text_area :img_url %></div></br>
+        <div>Name: </div><div><%= f.text_field :name %></div></br>
+        <div>Username: </div><div><%= f.text_field :username %></div></br>
+        <div>Email: </div><div><%= f.text_field :email %></div></br>
+        <div>Password: </div><div><%= f.text_area :password_digest %></div></br>
+        <div>Location: </div><div><%= f.text_field :location %></div></br>
+        <div><%= f.submit 'Save Changes' %></div>
+    <% end %>
+    <%= link_to 'Back', users_path %>
+</div></br>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+
