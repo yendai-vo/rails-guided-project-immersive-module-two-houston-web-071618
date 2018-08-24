@@ -1,4 +1,6 @@
-<div>
+<p class="text-right"><%= link_to 'Back to Users', users_path %></p>
+
+<div class="container text-center">
   <div><%= image_tag @user.img_url, :class=> "img-circular" %></div>
   <div><h2><%= @user.username %></h2></div>
   <div>Location: <%= @user.location %></div>
@@ -9,6 +11,3 @@
        <% end %></div>
 
 </div></br>
-
-
-<%= link_to 'Back', users_path %>

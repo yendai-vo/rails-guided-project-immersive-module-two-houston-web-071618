@@ -11,13 +11,13 @@
 
   <body>
     <% if @logged_in_user.id == nil%>
-      <%= link_to 'Sign In', new_session_path %>
-      <%= link_to 'Sign Up', new_user_path %>
+      <p class="text-right"><button type="button" class="btn btn-outline-primary"><%= link_to 'Sign In', new_session_path %></button>
+                            <button type="button" class="btn btn-outline-primary"><%= link_to 'Sign Up', new_user_path %></button></p>
     <% else %>
-      <%= link_to "Log Out", '/sessions' , method: "delete" %>
-      <%= link_to 'Profile', user_path(@logged_in_user) %>
+      <p class="text-right"><button type="button" class="btn btn-outline-primary"><%= link_to 'Profile', user_path(@logged_in_user) %></button>
+                            <button type="button" class="btn btn-outline-primary"><%= link_to "Log Out", '/sessions' , method: "delete" %></button></p>
     <% end %>
-    <p>Welcome, <%= @logged_in_user.name %></p>
+    <p class="text-right"> Welcome, <%= @logged_in_user.name %></h4></p>
     <%= yield %>
   </body>
 </html>

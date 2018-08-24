@@ -1,6 +1,8 @@
+<p class="text-right"><%= link_to 'Back', recipes_path %></p>
+
+<div class="container text-center">
 <h1>Editing Recipe</h1>
 
-<div>
     <%= form_with model: @recipe do |f| %>
         <div>Image URL: </div><div><%= f.text_field :img_url %></div></br>
         <div>Recipe Name: </div><div><%= f.text_area :title,size: "24x2" %></div></br>
@@ -19,5 +21,3 @@
         <div><%= f.submit %></div>
     <% end %>
 </div></br>
-
-<%= link_to 'Back', recipes_path %>

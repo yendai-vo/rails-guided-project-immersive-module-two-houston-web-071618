@@ -1,8 +1,10 @@
+
+<div class="container text-center">
 <h1>Tags</h1>
-<div>
   <% @tags.each do |tag| %>
-    <div><%= link_to tag.name, tag %></div></br>
+    <div><%= link_to tag.name, tag %></div>
   <% end %>
-</div></br>
+</br>
 
 <%= button_to 'Add New Tag', new_tag_path %>
+</div>
